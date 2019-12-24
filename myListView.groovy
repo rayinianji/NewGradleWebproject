@@ -24,4 +24,6 @@ listView('GERFTEST') {
         buildButton()
     }
 }
-//folder('GERF-DEV')
+folder('GERF-DEV')
+folder('GERF-QA')
+folder('GERF-PROD')
