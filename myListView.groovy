@@ -9,11 +9,11 @@ listView('GERFTEST') {
         name('GERF-PROD')
                 
     }
-    jobFilters {
+    /*jobFilters {
         status {
             status(Status.UNSTABLE)
         }
-    }
+    }*/
     columns {
         status()
         weather()
@@ -24,3 +24,4 @@ listView('GERFTEST') {
         buildButton()
     }
 }
+//folder('GERF-DEV')
