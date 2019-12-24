@@ -1,7 +1,6 @@
 listView('GERFTEST') {
     description('gerf jobs')
-    filterBuildQueue()
-    filterExecutors()
+
     jobs {
         name('GERF-DEV')
         name('GERF-QA')
