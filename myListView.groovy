@@ -24,6 +24,11 @@ listView('GERFTEST') {
         buildButton()
     }
 }
-folder('GERF-DEV')
-folder('GERF-QA')
-folder('GERF-PROD')
+folder('project-a') {
+    displayName('Project A')
+    description('Folder for project A')
+}
+folder('project-B') {
+    displayName('Project B')
+    description('Folder for project B')
+}
