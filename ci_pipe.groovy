@@ -1,15 +1,16 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/devopstrainingbanglore/gradle-web-app.git',branch: 'master'
+        git url: 'https://github.com/rayinianji/NewGradleWebproject.git',branch: 'master'
     }
     
     stage("Gradle Clean Build"){
-      def GradleHome = tool name: 'Gradle-4.9', type: 'gradle'
+      def GradleHome = tool name: 'gradle6', type: 'gradle'
       def gradleCMD = "${GradleHome}/bin/gradle"
       sh "${gradleCMD} clean build"
       
     } 
+}
     /**
     stage('Gradle Clean Build With Wrapper'){
         //With out below permision clean build will not work
@@ -18,7 +19,7 @@ node{
     }
     **/
     
-    stage('Build Docker Image'){
+   /* stage('Build Docker Image'){
         sh 'docker build -t dockerhandson/gradle-web-app .'
     }
     
@@ -43,4 +44,4 @@ node{
     }
      
      
-}
+}*/
