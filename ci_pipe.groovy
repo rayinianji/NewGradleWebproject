@@ -4,12 +4,18 @@ node{
         git url: 'https://github.com/rayinianji/NewGradleWebproject.git',branch: 'master'
     }
     
-    stage("Gradle Clean Build"){
+    /*stage("Gradle Clean Build"){
       def GradleHome = tool name: 'gradle6', type: 'gradle'
       def gradleCMD = "${GradleHome}/bin/gradle"
       sh "${gradleCMD} clean build"
       
-    } 
+    } */
+
+        stage('Gradle Clean Build With Wrapper'){
+        //With out below permision clean build will not work
+        sh 'chmod +x gradlew'
+        sh './gradlew clean build'
+    }
 }
     /**
     stage('Gradle Clean Build With Wrapper'){
