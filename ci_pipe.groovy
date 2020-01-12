@@ -26,6 +26,18 @@ node{
         }
         sh 'docker push anjidockerid/gradle-web-app'
      }
+        stage('Run Docker Image In Dev Server'){
+        
+        def dockerRun = ' docker run  -d -p 8888:8080 --name gradle-web-app anjidockerid/gradle-web-app'
+         
+         sshagent(['web_tom']) {
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.21.120 docker stop gradle-web-app || true'
+          sh 'ssh  ubuntu@172.31.21.120 docker rm gradle-web-app || true'
+          sh 'ssh  ubuntu@172.31.21.120 docker rmi -f  $(docker images -q) || true'
+          sh "ssh  ubuntu@172.31.21.120 ${dockerRun}"
+       }
+
+}
 }
     /**
     stage('Gradle Clean Build With Wrapper'){
