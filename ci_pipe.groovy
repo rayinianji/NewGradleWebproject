@@ -25,11 +25,11 @@ node{
     }
     **/
     
-   /* stage('Build Docker Image'){
-        sh 'docker build -t dockerhandson/gradle-web-app .'
+    stage('Build Docker Image'){
+        sh 'docker build -t anjidockerid/gradle-web-app .'
     }
     
-    stage('Push Docker Image'){
+    /*stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
           sh "docker login -u dockerhandson -p ${Docker_Hub_Pwd}"
         }
