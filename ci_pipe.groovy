@@ -16,6 +16,9 @@ node{
         sh 'chmod +x gradlew'
         sh './gradlew clean build'
     }
+         stage('Build Docker Image'){
+        sh 'docker build -t anjidockerid/gradle-web-app .'
+    }
 }
     /**
     stage('Gradle Clean Build With Wrapper'){
@@ -25,9 +28,9 @@ node{
     }
     **/
     
-    stage('Build Docker Image'){
+    /*stage('Build Docker Image'){
         sh 'docker build -t anjidockerid/gradle-web-app .'
-    }
+    }*/
     
     /*stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
